@@ -36,8 +36,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//Seed database
+//Seed database with some data
 //AppDbInitializer.Seed(app);
-//AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
 
 app.Run();

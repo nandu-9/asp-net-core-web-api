@@ -25,7 +25,7 @@ namespace book_store.Data
                 HasForeignKey(bi => bi.AuthorId);
         }
 
-        // DbSets name the tables
+        // DbSets names are the corresponding table names
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book_Author> Books_Authors { get; set; }
