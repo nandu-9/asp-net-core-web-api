@@ -37,7 +37,7 @@ namespace book_store.Data.Services
                     BookId=id,
                     AuthorId=id,
                 };
-                _context.Book_Authors.Add(_book_author);
+                _context.Books_Authors.Add(_book_author);
                 _context.SaveChanges();
             }
         }

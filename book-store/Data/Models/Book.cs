@@ -1,5 +1,6 @@
 ﻿namespace book_store.Data.Models
 {
+    // Note: Each model must be thought of as a entry in a row of the respective plural table.
     public class Book
     {
         public int Id { get; set; }
@@ -11,11 +12,12 @@
         public DateTime DateAdded { get; set; }
         public string CoverURL { get; set; }
         public string Genre { get; set; }
+        public string Author { get; set; }
 
 
         // Navigation Properties
         public int PublisherId { get; set; }
         public Publisher Publisher { get; set; }
-        public List<Book_Author> Book_Authors { get; set; }
+        public List<Book_Author> Book_Authors { get; set; } // Note: The naming implies 1-to-many relation
     }
 }
