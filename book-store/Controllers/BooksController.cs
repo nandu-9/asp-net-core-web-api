@@ -16,7 +16,7 @@ namespace book_store.Controllers
             _booksService = booksService;
         }
 
-        [HttpPost("add-book")]
+        [HttpPost("add-book-with-authors")]
         public IActionResult AddBookWithAuthors([FromBody]BookVM book)
         { 
             _booksService.AddBookWithAuthors(book);

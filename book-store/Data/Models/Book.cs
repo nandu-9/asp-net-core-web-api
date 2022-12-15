@@ -12,7 +12,6 @@
         public DateTime DateAdded { get; set; }
         public string CoverURL { get; set; }
         public string Genre { get; set; }
-        public string Author { get; set; }
 
 
         // Navigation Properties

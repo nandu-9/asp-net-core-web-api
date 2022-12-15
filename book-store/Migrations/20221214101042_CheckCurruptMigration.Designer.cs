@@ -12,8 +12,8 @@ using book_store.Data;
 namespace bookstore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221214050545_CorrectionForCurruptedMigration")]
-    partial class CorrectionForCurruptedMigration
+    [Migration("20221214101042_CheckCurruptMigration")]
+    partial class CheckCurruptMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,9 +49,6 @@ namespace bookstore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Author")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CoverURL")
                         .HasColumnType("nvarchar(max)");
 
@@ -70,7 +67,7 @@ namespace bookstore.Migrations
                     b.Property<bool>("IsRead")
                         .HasColumnType("bit");
 
-                    b.Property<int>("PublisherId")
+                    b.Property<int?>("PublisherId")
                         .HasColumnType("int");
 
                     b.Property<int?>("Rating")
@@ -129,9 +126,7 @@ namespace bookstore.Migrations
                 {
                     b.HasOne("book_store.Data.Models.Publisher", "Publisher")
                         .WithMany("Books")
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PublisherId");
 
                     b.Navigation("Publisher");
                 });

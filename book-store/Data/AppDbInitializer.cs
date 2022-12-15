@@ -21,7 +21,6 @@ namespace book_store.Data
                     context.Books.AddRange(new Book() { 
                         Title="First Book",
                         Description="First Book Description",
-                        Author="NASA",
                         IsRead=true,
                         Rating=5,
                         DateRead= DateTime.Now.AddDays(-10),
@@ -32,12 +31,10 @@ namespace book_store.Data
                     new Book() {
                         Title = "Second Book",
                         Description = "Second Book Description",
-                        Author = "Hollywood",
                         IsRead = false,
                         DateAdded = DateTime.Now,
                         CoverURL = "https...",
                         Genre = "Adventure"
-
                     });
 
                     context.SaveChanges();
