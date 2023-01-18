@@ -8,7 +8,7 @@ namespace book_store.Data
 {
     public class AppDbInitializer
     {
-        // Used for populating the initial values in the database.
+        // Used for just seeding the database.
         public static void Seed(IApplicationBuilder applicationBuilder)
         {
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
